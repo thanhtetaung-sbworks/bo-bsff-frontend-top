@@ -1,0 +1,48 @@
+.children-picker {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-gap: 14px 18px;
+  @include mq() {
+    font-size: 12px;
+  }
+  .picker-item {
+    // background: red;
+
+    &:nth-child(4) {
+      grid-row: span 2;
+    }
+
+    &.head {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .item-counter {
+      display: flex;
+      align-items: center;
+      .c-button-counter {
+        cursor: pointer;
+        &.disabled {
+          cursor: default;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+      .c-input-counter {
+        width: 4.5rem;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #cacccf;
+        border-radius: 4px;
+        cursor: default;
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        @include mq() {
+          font-size: 12px;
+          width: 3rem;
+        }
+      }
+    }
+  }
+}

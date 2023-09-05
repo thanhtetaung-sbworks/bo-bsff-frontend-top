@@ -1,0 +1,72 @@
+@keyframes SlideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes SlideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(-80%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1%);
+  }
+}
+
+.c-nav-menu-modal-sp {
+  z-index: 10000;
+  background-color: white;
+  transition: all 0.6s;
+  .modal_active {
+    display: block;
+    height: 100dvh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    animation: SlideUp .5s ease-in-out forwards;
+  }
+  .modal_down {
+    display: none;
+  }
+  &__header {
+    border-bottom: 1px solid #e60021;
+    position: relative;
+    &__title {
+      margin: auto;
+      display: flex;
+      gap: 5px;
+      font-weight: 600;
+      justify-content: center;
+      height: 60px;
+      align-items: center;
+      .c-icon {
+        path {
+          fill: $CoolBlack;
+        }
+      }
+    }
+    &__close-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.6rem;
+      position: absolute;
+      top: 11px;
+      right: 20px;
+      .c-icon {
+        path {
+          fill: $Red;
+        }
+      }
+    }
+  }
+  &__main {
+    margin-top: auto;
+    height: calc(100dvh - 90px);
+    overflow: scroll;
+  }
+}

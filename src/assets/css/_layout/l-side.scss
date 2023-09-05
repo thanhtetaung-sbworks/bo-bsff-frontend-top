@@ -1,0 +1,110 @@
+.l-side {
+  width: 240px;
+  font-size: 0.875rem;
+  &__wrap {
+    // padding: 0.5rem 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 1px .5rem rgba($color: $CoolBlack, $alpha: .08);
+    overflow: hidden;
+  }
+  &__lists {
+    position: relative;
+    ul {
+      &:not(:last-child) {
+        margin-bottom: .625rem;
+        padding-bottom: .625rem;
+        border-bottom: 1px solid $CoolGray4;
+        @include mq() {
+          margin-bottom: .75rem;
+          padding-bottom: .75rem;
+        }
+      }
+    }
+  }
+  &__list {
+    &__item {
+      position: relative;
+      display: block;
+      color: $CoolBlack;
+      // padding: .5rem;
+      padding: 0.5rem 1.5rem;
+      .c-icon {
+        position: absolute;
+        top: 50%;
+        right: 13px;
+        transform: translateY(-50%);
+      }
+      &--head {
+        font-weight: 700;
+      }
+      &--checked {
+        position: absolute;
+        top: 50%;
+        right: 13px;
+        transform: translateY(-50%);
+        color: $Red;
+      }
+      @include mq() {
+        padding-top: .625rem;
+        padding-bottom: .625rem;
+      }
+      input:checked + .c-checkbox__box::before {
+        color: $Red;
+      }
+    }
+    &__bottom {
+      border-bottom: none;
+    }
+    &--checked {
+      background-color: $LightYellow;
+    }
+  }
+  a {
+    color: $CoolBlack;
+    .c-icon {
+      width: 1.25em;
+      height: 1.25rem;
+      g {
+        fill: $CoolGray;
+      }
+    }
+    &:hover {
+      color: $Red;
+      text-decoration: none;
+      .c-icon {
+        g {
+          fill: $Red;
+        }
+      }
+    }
+  }
+  .l-side__submit {
+    text-align: center;
+    .l-side__submit__button {
+      width: 120px;
+      padding: 0.25rem 1rem;
+      background-color: $CoolBlack;
+      border-radius: 8px;
+      cursor: pointer;
+      .l-side__submit__label {
+        color: #fff;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .l-side__select {
+    margin-bottom: 0.5rem;
+    padding: 0 1.5rem;
+    &.c-select:after {
+      right: 2rem;
+    }
+    .l-side__select__control {
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+
+  }
+}

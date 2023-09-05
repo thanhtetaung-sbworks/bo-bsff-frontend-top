@@ -1,0 +1,204 @@
+.c-cms-header-search-sp {
+  z-index: 0;
+  //========== cassette 部分 ============
+  &__cassette {
+    margin: 0.8rem 0;
+    &__wrap {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      margin: 0 auto;
+      .spacer {
+        width: 0.2%;
+        background-color: $CoolGray4;
+        margin: 0 2%;
+        height: 1.5rem;
+        border-radius: 4px;
+      }
+    }
+    &__title {
+      padding-bottom: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      &.is-active {
+        color: #da291c;
+        border-bottom: 3px solid #da291c;
+      }
+      a {
+        color: $CoolBlack;
+        text-decoration: none;
+        i img {
+          width: 0.75rem;
+          height: auto;
+          display: inline-block;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  //========== search 部分 ============
+
+  &__nav {
+    border-bottom: 1px solid #eeeeee;
+    background-color: $CoolGray6;
+    border-radius: 4px 4px 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &::-webkit-scrollbar{
+      display:none;
+    }
+    .list__item {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-bottom: -1px;
+      font-size: 12px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.is-active {
+        text-decoration: none;
+        font-weight: bold;
+        color: $CoolBlack;
+        border-bottom: 3px solid $Red;
+      }
+      a {
+        color: $CoolBlack;
+        i img {
+          width: 10px;
+          margin-left: 0.2rem;
+        }
+      }
+    }
+  }
+  &__search {
+    margin-bottom: 3rem;
+    @include mq() {
+      margin-bottom: 3rem;
+    }
+    &__main {
+      &__areaSelector {
+        .c-select {
+          margin-bottom: 0.5rem;
+          &__control {
+            font-size: 12px;
+          }
+        }
+        .c-input {
+          .c-stay-search-input {
+            font-size: 12px;
+          }
+        }
+      }
+      &__genreSelect {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+        @include mq('md') {
+          display: block;
+        }
+        .c-select {
+            width: 100%;
+          .c-select__control {
+            cursor: pointer;
+            font-size: 12px;
+          }
+        }
+      }
+      &__genreTagList {
+        width: 100%;
+      }
+      &__genreTags {
+        display: inline-block;
+        margin-left: 2%;
+        font-size: 12px;
+        @include mq('md') {
+          margin-top: 0.5rem;
+        }
+        button {
+          width: 20px;
+          border-radius: 10px;
+          margin: 0 10px 0 5px;
+        }
+      }
+      &__row {
+        .c-input {
+          input {
+            font-size: 12px;
+          }
+        }
+      }
+      &__input {
+        padding: 0 10px;
+        position: relative;
+        margin-top: 0.5rem;
+      }
+      &__nav {
+        .search-buttons {
+          bottom: 0;
+          position: fixed;
+          box-shadow: 0 4px 3px 3px rgb(0 0 0 / 50%);
+          background-color: #fff;
+          padding: 8px 0;
+          width: 100%;
+          z-index: 100;
+          .search-buttons-flow {
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+            width: 92%;
+            align-items: center;
+            padding: 8px 0;
+            .search-button {
+              align-items: center;
+              justify-content: center;
+              background-color: $Red;
+              color: #fff;
+              height: 2.4rem;
+              border-radius: $radiusSizeSm;
+              font-weight: bold;
+              display: inline-block;
+              width: 50%;
+              font-size: 0.8rem;
+              display: flex;
+              &:disabled {
+                background-color: lightgrey;
+              }
+              .c-icon {
+                g {
+                  fill: #fff;
+                }
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            .c-text-button {
+              width: 50%;
+              .map-button {
+                width: 100%;
+                height: 2.4rem;
+                font-size: 0.8rem;
+                font-weight: bold;
+                border: 1px solid $CoolGray2;
+                border-radius: $radiusSizeSm;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                .c-icon:first-of-type {
+                  left: calc(50% - 41px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

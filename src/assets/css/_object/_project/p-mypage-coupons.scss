@@ -1,0 +1,40 @@
+.p-mypage-coupons {
+  .p-mypage-coupons__content {
+  }
+  .p-mypage-coupons__block {
+    &+.p-mypage-coupons__block {
+      border-top: 1px solid $CoolGray3;
+    }
+  }
+  .p-mypage-coupons__itemsList {
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      @include mq() {
+        display: block;
+      }
+      .item-label {
+        align-self: start;
+        span {
+          background-color: $CoolGray5;
+          padding: 0.2rem 0.5rem;
+        }
+      }
+      .item-body {
+        margin-left: 0.5rem;
+        flex-grow: 1;
+        @include mq() {
+          margin-left: 0;
+        }
+      }
+      .item-body__price__row {
+        display: flex;
+        justify-content: space-between;
+        @include mq() {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
