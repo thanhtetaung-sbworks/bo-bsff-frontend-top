@@ -1,0 +1,3 @@
+[submodule "bo-bsff-frontend-common"]
+	path = bo-bsff-frontend-common
+	url = ../bo-bsff-frontend-common

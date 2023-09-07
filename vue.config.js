@@ -17,7 +17,7 @@ module.exports = {
     resolve: {
       alias: {
         vue$: "vue/dist/vue.esm.js",
-        common: path.resolve(__dirname, "../bo-bsff-frontend-common")
+        common: path.resolve(__dirname, "bo-bsff-frontend-common")
       },
     },
     output: {
